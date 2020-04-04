@@ -1,22 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-		<style>
+
+<head>
+	<meta charset="UTF-8" />
+	<style>
 		.center {
 			margin: auto;
 			width: 60%;
 			text-align: center;
 			padding: 15px;
 		}
-		</style>
-    </head>
 
-    <body>
-		
-		<div class="center">
+		body {
+			margin: 0;
+			white-space: nowrap;
+			width: 100%;
+		}
+
+		div {
+			display: inline-block;
+			vertical-align: top;
+			white-space: normal;
+			width: 50%;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		https://philip-ym.github.io/ANLY560
+		<div id="ANLY560"></div>
+	</div>
+	<div>
+		https://philip-ym.github.io/Spoon-Knife
+		<div id="Spoon-Knife"></div>
+	</div>
+	<!--<div class="center">
 		<h1>Welcome to HomePage</h1>
-		</div>
-    </body>
+		</div>-->
+</body>
+<script>
+	function loadPage(url, id) {
+		fetch(url)
+		.then((response) => response.text())
+		.then((html) => {
+			document.getElementById(id).innerHTML = html;
+		})
+		.catch((error) => {
+			console.warn(error);
+		});			
+	}
+	loadPage("https://philip-ym.github.io/ANLY560", "ANLY560");
+	loadPage("https://philip-ym.github.io/Spoon-Knife", "Spoon-Knife");
+	// fetch("https://philip-ym.github.io/ANLY560/")
+	// 	.then((response) => response.text())
+	// 	.then((html) => {
+	// 		document.getElementById("ANLY560").innerHTML = html;
+	// 	})
+	// 	.catch((error) => {
+	// 		console.warn(error);
+	// 	});	
+</script>
 
 </html>
